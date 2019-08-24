@@ -1,0 +1,5 @@
+LIBRARY some
+EXPORTS
+  func_1
+  func_1W
+  func_2
