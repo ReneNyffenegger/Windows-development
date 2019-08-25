@@ -1,5 +1,5 @@
 *.swp
-*.dll
 *.exp
+*.exe
 *.obj
 *.lib
