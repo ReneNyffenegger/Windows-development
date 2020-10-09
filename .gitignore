@@ -1,5 +1,8 @@
 *.swp
 *.exp
 *.exe
+*.dll
 *.obj
 *.lib
+
+!rundll32.exe
