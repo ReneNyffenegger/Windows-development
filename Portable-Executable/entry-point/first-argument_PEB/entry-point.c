@@ -5,7 +5,6 @@ void* get_gs_60();
 
 HANDLE stdOut;
 
-
 void* get_peb_address() {
 
    typedef NTSTATUS (NTAPI *ptrNtQueryInformationProcess)
@@ -46,11 +45,25 @@ int __stdcall entryPoint(void* first_arg) {
 
     stdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    void* gs_60 = get_gs_60();
+ //
+ // Use an compiler intrinsic function to get a pointer to
+ // the PEB:
+ //
+    DWORD64 intr = __readgsqword(0x60);
+
+ //
+ // Get the same pointer with «ordinary» assembly:
+ //
+    void* gs_60  = get_gs_60();
+
+ // 
+ // Alternatively, use WinAPI functions:
+ //
     void* PEB   = get_peb_address();
 
     printAddress("First argument", first_arg);
     printAddress("gs:[60h]"      , (void*) gs_60);
+    printAddress("intrinsic"     , (void*) intr);
     printAddress("PEB"           , PEB);
 
     return 42;
