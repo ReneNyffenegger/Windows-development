@@ -70,7 +70,7 @@ int main() {
          return 0;
    }
 
-   wchar_t lnkFile[] = L"C:\\Users\\OMIS.Rene\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.lnk";
+   wchar_t lnkFile[] = L"C:\\Users\\Rene\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Command Prompt.lnk";
 
 // Load the shortcut.
    rc = iPersistFile->Load(lnkFile, STGM_READ);
