@@ -1,6 +1,6 @@
 #include <windows.h>
 
-extern __declspec (dllexport) void __cdecl func (
+extern __declspec (dllexport) void CALLBACK func (
    HWND      hwnd,         // handle to owner window
    HINSTANCE hinst,        // instance handle for the DLL
    LPTSTR    lpCmdLine,    // string the DLL will parse
